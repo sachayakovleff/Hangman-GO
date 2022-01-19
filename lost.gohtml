@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<link href="css/styles.css" rel="stylesheet">
+<html>
+<center><br>
+    Vous avez perdu!
+    <br>
+        <div style="height:100px;margin-top: 300px">
+            <br>
+                <p>Le mot était: {{.Word}}<br />
+                    vous aviez trouvé: {{.Hword}}  <br />
+                    lettres testées: {{.Wordtested}}<br />
+                </p>
+        </div>
+    <form action="/lost" method="POST">
+        <div>
+            <button name="restart" value="restart">Recommencer une partie</button>
+        </div>
+</form>
+</center>
+<div style="height:100;margin-top: -400px">
+<h1>
+        <pre>
+            {{ range .Hangman }}
+            {{.}}{{ end }}
+        </pre>
+    </h1>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<link href="css/styles.css" rel="stylesheet">
+<html>
+<center><br>
+    Félicitation vous avez gagné
+</br>
+    <div style="height:100px;margin-top: 300px">
+        <p>
+            Vous aviez encore: {{.Hp}} Hp <br />
+            Le mot était: {{.Word}} <br />
+        </p>
+        <form action="/win" method="POST">
+            <div>
+                <button name="restart" value="restart">Recommencer une partie</button>
+            </div>
+        </form>
+</center>
+<div style="height:100;margin-top: -400px">
+<h1>
+        <pre>
+            {{ range .Hangman }}
+            {{.}}{{ end }}
+        </pre>
+</h1>
+</html>

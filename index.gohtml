@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<link href="css/styles.css" rel="stylesheet">
+<html>
+<center><br>
+Bienvenue sur le jeu hangman
+<br>
+    <div style="height:100px;margin-top: 300px">
+    Tu as rentré: {{.Hword}}
+    </div>
+    <form action="/" method="POST">
+        <div style="height:100px;margin-top: -50px">
+            <input type="text" name="Hword">
+        </div> 
+        <div style="height:100;margin-top: -40px">
+            <input type="submit" name="submit"> 
+        </div>
+    </form>
+</center>
+    <div style="height:100;margin-top: -400px">
+    <h1>
+        <pre>
+            {{ range .Hangman }}
+            {{.}}{{ end }}
+        </pre>
+    </h1>
+    </div>  
+<div style="height:100px;margin-top: -300px">
+        Tu as testé: {{.Wordtested}}
+</div>
+<div style="height:100px;margin-top: -150px">
+        Nombre de chance: {{.Hp}}
+</div>
+</html>
